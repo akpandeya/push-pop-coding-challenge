@@ -1,0 +1,258 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+html {
+    display: table;
+    margin: auto;
+}
+
+/* .custom__table .table-header {
+    display: table;
+    margin: auto;
+    font-size: 20px;
+    margin-bottom: 2px;
+} */
+
+.table__div {
+    padding: 0;
+    width: 800px;
+}
+
+
+
+.custom__table td {
+    padding-right: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+}
+.custom__table tr:nth-child(even){background-color: #f2f2f2;}
+
+.custom__table button {
+    border: none;
+    color: white;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 2px 0px;
+
+}
+.resolve  {
+    background-color:rgb(85, 158, 214);
+    
+}
+.moveToUnresolved{
+    background-color:rgb(85, 158, 214);
+}
+.resolve:hover {
+    background-color:rgb(59, 110, 149);
+    
+}
+.moveToUnresolved:hover {
+    background-color:rgb(59, 110, 149);
+}
+
+.unresolve {
+    background-color:rgb(85, 158, 214);
+}
+
+.unresolve:hover {
+    background-color:rgb(59, 110, 149);
+}
+.undo
+{
+    background-color:rgb(85, 158, 214);
+
+}
+.undo:hover{
+    background-color:rgb(59, 110, 149);
+}
+.undo__last
+{
+    background-color: rgb(239, 145, 92);
+    padding: 5px;
+    position: -webkit-sticky;
+    position: sticky;
+    bottom: 50%;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin: 20px;
+    color: white;
+    opacity: 0.6;
+
+}
+
+.undo__last:hover{
+    background-color: rgb(167, 101, 64); 
+    opacity: 1;
+}
+#undo__icon
+{
+    width: 25px;
+    height: 25px;
+    color: white;
+}
+.undo__last:hover{
+    background-color: rgb(167, 101, 64); 
+}
+ul.tabs__header {
+    display: block;
+    list-style: none;
+    margin: 0 0 0 20px;
+    padding: 0;
+}
+ul.tabs__header > li {
+    padding: 15px 30px;
+    border-radius: 10px;
+    margin: 0;
+    display: inline-block;
+    margin-right: 5px;
+    cursor: pointer;
+}
+ul.tabs__header > li.tab__selected {
+    font-weight: bold;
+    border-radius: 10px 10px 0 0;
+    border-bottom: 8px solid transparent;
+}
+.tab {
+    display: inline;
+    color: black;
+    padding: 20px;
+    min-width: 800px;
+    border-radius: 10px;
+    min-height: 400px;
+}
+.tabs__light .tab{
+    background-color: #fff;
+}
+.tabs__light li {
+    background-color: #fff;
+    color: dimgray;
+    border-style: solid;
+
+}
+.tabs__light li.tab__selected {
+    background-color: #eee;
+    color: rgb(85, 158, 214);
+}
+li.tabs__light:hover {
+    color:rgb(59, 110, 149);
+}
+.fixed__tabs {
+    position:sticky; 
+    top:0;
+}
+  
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: rgb(239, 145, 92) ;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: 150%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 1s;
+}
+  
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent rgb(239, 145, 92) transparent;
+}
+  
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+@media screen and (max-width: 800px) {
+    .tab {
+        display: block;
+    }
+    ul.tabs__header > li {
+        display: block;
+        transition: visibility 0s, opacity 0.5s ease-out;
+        height: 0px;
+        margin: 10px;
+        opacity: 0;
+        overflow: hidden;
+        position: fixed;
+        top: 0;
+        
+    }
+    .tabs__slot{
+        margin-top: 80px;
+    }
+    ul.tabs__header > li.tab__selected {
+        /* display: block; */
+        height: 50px;
+        opacity: 1;
+        width: 450px;
+        
+    }
+    ul.tabs__header:hover > li {
+        /* display: block; */
+        height: 50px;
+        opacity: 1;
+        position: relative;
+    }
+    table {
+        border: 0;
+      }
+      table thead {
+        border: none;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+      }
+      
+      table tr {
+        border-bottom: 3px solid #ddd;
+        display: block;
+        margin-bottom: .625em;
+        margin-left: 2em;
+      }
+      
+      table td {
+        border-bottom: 1px solid #ddd;
+        display: block;
+        text-align: center;
+      }
+      
+      table td::before {
+        content: attr(label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+      
+      table td:last-child {
+        border-bottom: 0;
+      }
+
+      tbody {
+          min-width: 400px;
+      }
+      table {
+        min-width: 500px;
+    }
+}
