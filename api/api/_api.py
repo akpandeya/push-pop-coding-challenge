@@ -2,20 +2,20 @@
 import logging
 import random
 from typing import Any, Dict
-
 from starlette.datastructures import State
-
 from ._utils import get_code_dict, get_intersection
-
 from fastapi import FastAPI
 import uvicorn
-
+from .models import Resolved
 ERROR_CODES = [error_code for error_code in range(50)]
 LOGGER = logging.getLogger("API")
 logging.basicConfig(filename='file.log', filemode='w', level=logging.INFO)
 app = FastAPI()
 
-app.state = {"error_count" : 0}
+app.state = {
+    "error_count" : 0,
+    "get_list" : {},
+    }
 
 
 
@@ -40,11 +40,13 @@ def _generate_lists() -> Dict[str, Any]:
     }
 
 @app.get("/get_lists")
-def get_lists() -> Dict[str, Any]:
+def get_lists(operator_name  = "") -> Dict[str, Any]:
     """Return resolved, unresolved and backlog lists."""
     LOGGER.info('Generating resolved, unresolved and backlog lists.')
     app.state['error_count'] =  app.state.get('error_count') + 1
-    LOGGER.info(f"Accessed {app.state.get('error_count')} time(s)")
+    app.state["get_list"][operator_name] = app.state["get_list"].get(operator_name, 0) + 1
+    LOGGER.info(f"Accessed {app.state.get('error_count')} time(s) in total")
+    LOGGER.info(f"Operator- {operator_name} accessed the list {app.state['get_list'].get(operator_name, 0)} time(s)")
     return _generate_lists()
 
 
@@ -108,6 +110,17 @@ def get_list_intersection_counts() -> Dict[str, int]:
     }
     # NOTE: THIS IS JUST AN EXAMPLE, REPLACE WITH YOUR OWN CODE AND `return`!
 
+@app.post("/post-resolved", status_code=200)
+def post_resolved(resolved_list: list[Resolved]):
+    resolved_errors = {}
+    
+    for error in resolved_list:
+        resolved_errors[error.code] = resolved_errors.get(error.code, 0) + 1
+    
+    LOGGER.info(resolved_errors)
+    
+    return resolved_errors
+    
 
 def run(host: str, port: int) -> None:
     """Run the code challenge API."""
