@@ -63,7 +63,7 @@
 
 <script>
 import Tab from '../components/Tab.vue';
-import Tabs from '../components/tabs.vue';
+import Tabs from '../components/Tabs';
 import customTable from '../components/customTable.vue';
 import {moveItemGetHistory, handleButtonClick, undoMove} from './utils'
 export default {
@@ -71,7 +71,12 @@ export default {
   async asyncData({ $axios }) {
     try {
       const { resolved, unresolved, backlog } = await $axios.$get(
-        "http://localhost:8000/get_lists"
+        "http://localhost:8000/get_lists",
+        {
+          params: {
+            operator_name: 'akpandeya'
+          }
+        }
       );
 
       return {
