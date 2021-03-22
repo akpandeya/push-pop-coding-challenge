@@ -11,7 +11,9 @@ export default {
     title: {
       type: String,
       default: 'Tab'
-    }
+    },
+    count: Number,
+    icon : String,
   },
   data () {
     return {

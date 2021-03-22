@@ -7,9 +7,11 @@ from ._utils import get_code_dict, get_intersection
 from fastapi import FastAPI
 import uvicorn
 from .models import Resolved
+
 ERROR_CODES = [error_code for error_code in range(50)]
 LOGGER = logging.getLogger("API")
 logging.basicConfig(filename='file.log', filemode='w', level=logging.INFO)
+
 app = FastAPI()
 
 app.state = {

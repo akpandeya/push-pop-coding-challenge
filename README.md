@@ -58,19 +58,19 @@ This is the absolute minimum our operators and their managers need, in order to 
 _frontend version two_
 
 -   [ ] make the UI/UX better
-    -   [ ] shadows,
-    -   [ ] click, hover animations (e.g. changing to a darker shade of said color)
+    -   [X] shadows,
+    -   [X] click, hover animations (e.g. changing to a darker shade of said color)
     -   [ ] notifications
     -   [X] mobile layout
     -   [ ] ...
--   [ ] make the undo functionality better
-    -   [ ] the user should be able to undo _all_ of his actions
+-   [X] make the undo functionality better
+    -   [X] the user should be able to undo _all_ of his actions
     -   [X] when a user clicks undo, the item that switches lists should be in the same position as before (e.g., if the user resolved an error that was in the middle of the list at position 4, it should also re-appear at position 4 if he undoes this action)
 
 _api version two_
 
--   [ ] add the `operator_name` as a parameter to the request that is sent from the `frontend` to the `api` to get the error lists. Then log how many times a certain operator requested data (you can store these numbers in memory, no persistent storage required). You may hardcode a name in the frontend, e.g., `operator_name: 'YOUR NAME'`.
--   [ ] add a new functionality: The operator can send all errors that are currently marked as `resolved` to the `api`, the `api` prints out how many times a certain `error.code` was resolved
+-   [X] add the `operator_name` as a parameter to the request that is sent from the `frontend` to the `api` to get the error lists. Then log how many times a certain operator requested data (you can store these numbers in memory, no persistent storage required). You may hardcode a name in the frontend, e.g., `operator_name: 'YOUR NAME'`.
+-   [X] add a new functionality: The operator can send all errors that are currently marked as `resolved` to the `api`, the `api` prints out how many times a certain `error.code` was resolved
 
 Note: These are in no particular order, start and do whatever you like. If you have a good idea on how to solve one of these problems, it would be a good idea to start with that problem. We appreaciate nice UI/UX implementations, but we also appreaciate efficient and smart data structure/logic implementations.
 

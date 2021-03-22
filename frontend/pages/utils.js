@@ -49,8 +49,11 @@ export function handleButtonClick(value)
     case 'undo-last':
       this.undoMove(this.history.length - 1)
       break;
+    case 'undo-all':
+      this.undoAll()
+      break;
     default:
-      console.log("Do not recognise this button. It should have class 'resolve', 'unresolve', 'moveToUnresolved', 'undo'");
+      console.log("Do not recognise this button. It should have class 'resolve', 'unresolve', 'moveToUnresolved', 'undo', 'und-last, 'undo-all");
   }
 }
 
@@ -63,4 +66,16 @@ export function undoMove(position){
     }
     this.history.splice(position, 1);
   }
+}
+
+export function undoAll() {
+  const length = this.history.length ;
+  for (var i = 0; i < length ; i++)
+  {
+    this.undoMove(this.history.length - 1);
+  }
+}
+
+export function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
 }

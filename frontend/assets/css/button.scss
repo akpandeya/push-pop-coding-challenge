@@ -1,0 +1,111 @@
+@import 'library';
+button {
+    box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 200px;
+    height: 50px;
+
+    &:active {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transform: translateY(4px);
+    }
+
+    span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+
+        &:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0s;
+        }
+    }
+
+    &:hover {
+        span {
+            padding-right: 25px;
+
+            &:after {
+                opacity: 1;
+                right: 0;
+            }
+        }
+    }
+    
+}
+
+
+.undo-button
+{
+    background-color: var(--secondary-color);
+    width: 200px;
+    margin-left: 10px;
+
+    .menu-item{
+        padding: 5px;
+        margin: 10px;
+        
+        font-weight:bold; font-size:19rem;
+        &:hover, &:focus{background-color:transparent;}
+        &:hover, 
+        &:focus,
+        &.is-selected{
+          .count, .icon, .text{color:var(--white);}
+          
+        }
+      }
+      @media #{$break1}, #{$break2}, #{$break3}, #{$break4}{  
+
+        width: auto;
+
+        .menu-item{
+        
+            .text {
+                display: inline;
+            }
+          }
+
+    }
+}
+
+.undo-all
+{
+    background-color: var(--secondary-color);
+    width: 200px;
+    position: absolute;
+    bottom: 20px;
+    left: 0px;
+    margin-left: 10px;
+
+
+    .menu-item{
+        padding: 5px;
+        margin: 10px;
+        
+        font-weight:bold; font-size:19rem;
+        &:hover, &:focus{background-color:transparent;}
+        &:hover, 
+        &:focus,
+        &.is-selected{
+          .count, .icon, .text{color:var(--white);}
+          
+        }
+      }
+      @media #{$break1}, #{$break2}, #{$break3}, #{$break4}{  
+
+        width: auto;
+        height: 80px;
+
+        .menu-item{
+        
+            .text {
+                display: inline;
+            }
+          }
+
+    }
+}

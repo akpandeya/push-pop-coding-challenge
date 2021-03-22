@@ -1,0 +1,27 @@
+/* Responsive Variables */
+$break1:    "(max-width:499px)";
+$break2:    "(min-width:500px) and (max-width:1004px)";
+$break2open:"(min-width:500px)";
+$break3:    "(min-width:1005px) and (max-width:1094px)";
+$break3open:"(min-width:1005px)";
+$break4:    "(min-width:1095px) and (max-width:1281px)";
+$break4open:"(min-width:1095px)";
+$break5open:"(min-width:1282px)";
+
+/* colors */
+:root{
+    --white:#fff;
+    --black:#000;
+    --grayA:#657786;
+    --gray-light:#eff3f7;
+    --border-color:#e6ecf0;
+    
+    --base-color:203; 
+    --main-color:rgb(85, 158, 214);
+    --hover-color: rgb(59, 110, 149);
+    --bg-hover-color: rgba(36, 138, 235, 0.1);
+
+    --secondary-color: rgb(239, 145, 92);
+    --secondary-dark : rgb(167, 101, 64)
+
+  }

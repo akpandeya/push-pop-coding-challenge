@@ -23,6 +23,12 @@ export default {
   ** Global CSS
   */
   css: [
+    '@/assets/css/button.scss',
+    '@/assets/css/table.scss',
+    '@/assets/css/tabs.scss',
+    '@/assets/css/_library.scss',
+    '@/assets/css/snackbar.scss',
+
   ],
   /*
   ** Plugins to load before mounting the App
