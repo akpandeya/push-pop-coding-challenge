@@ -134,3 +134,10 @@ INFO:API:Operator- akpandeya accessed the list 43 time(s)
 INFO:API:Generating resolved, unresolved and backlog lists.
 INFO:API:Accessed 44 time(s) in total
 INFO:API:Operator- akpandeya accessed the list 44 time(s)
+INFO:API:Generating resolved, unresolved and backlog lists.
+INFO:API:Accessed 45 time(s) in total
+INFO:API:Operator- akpandeya accessed the list 45 time(s)
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [67530]

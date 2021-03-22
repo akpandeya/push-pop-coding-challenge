@@ -40,7 +40,7 @@ You may submit notes, feedback or any additional information that you _want_ to 
 
 _frontend_
 
--   [ ] Write a UI that allows the operator to:
+-   [X] Write a UI that allows the operator to:
     -   [X] have an "nice" overview of all errors, it should show `unresolved`, then `resolved` and then `backlog` errors
     -   [X] see the `text` and `code` of each error
     -   [X] resolve each individual `unresolved` error by clicking an individual button
