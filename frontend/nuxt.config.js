@@ -27,7 +27,6 @@ export default {
     '@/assets/css/table.scss',
     '@/assets/css/tabs.scss',
     '@/assets/css/_library.scss',
-    '@/assets/css/snackbar.scss',
 
   ],
   /*
