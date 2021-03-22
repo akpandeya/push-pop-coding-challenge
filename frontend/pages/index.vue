@@ -63,10 +63,9 @@
 import Tab from '../components/Tab.vue';
 import Tabs from '../components/Tabs';
 import customTable from '../components/customTable.vue';
-import SnackBar from '../components/SnackBar'
 import {moveItemGetHistory, handleButtonClick, undoMove, undoAll} from './utils'
 export default {
-  components: { customTable, Tabs, Tab, SnackBar },
+  components: { customTable, Tabs, Tab },
   async asyncData({ $axios }) {
     try {
       const { resolved, unresolved, backlog } = await $axios.$get(
