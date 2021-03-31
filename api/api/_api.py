@@ -113,7 +113,7 @@ def get_list_intersection_counts() -> Dict[str, int]:
     # NOTE: THIS IS JUST AN EXAMPLE, REPLACE WITH YOUR OWN CODE AND `return`!
 
 @app.post("/post-resolved", status_code=200)
-def post_resolved(resolved_list: list[Resolved]):
+def post_resolved(resolved_list):
     resolved_errors = {}
     
     for error in resolved_list:

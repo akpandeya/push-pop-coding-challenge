@@ -1,7 +1,7 @@
-def get_code_dict(items : list[dict]) -> dict:
+def get_code_dict(items):
     return {item.get("code") : True for item in items}
 
-def get_intersection(item_dict1 : dict, item_dict2 : dict) -> int:
+def get_intersection(item_dict1, item_dict2):
     itersection = 0
     for code in item_dict1.keys():
         if (code in item_dict2):
